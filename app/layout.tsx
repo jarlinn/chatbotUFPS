@@ -24,6 +24,13 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
+        <Script
+          id="n8n-config"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.N8N_BASE_URL = '${process.env.NEXT_PUBLIC_N8N_BASE_URL}';`,
+          }}
+        />
         <Script src="./chat-widget.js" strategy="afterInteractive" />
       </body>
     </html>
