@@ -271,9 +271,9 @@
       // Add to history with timestamp (only for non-file messages)
       if (!isFile) {
         conversationHistory.push({ role: type, text: text, timestamp: timestamp, isFile: isFile })
-        // Limit to last 20 messages
-        if (conversationHistory.length > 20) {
-          conversationHistory = conversationHistory.slice(-20)
+        // Limit to last 5 messages
+        if (conversationHistory.length > 5) {
+          conversationHistory = conversationHistory.slice(-5)
         }
         saveHistory()
       } else {
@@ -281,9 +281,9 @@
         const lastUserMessage = conversationHistory.filter(msg => msg.role === 'user').pop()
         if (lastUserMessage) {
           conversationHistory.push({ role: type, text: lastUserMessage.text, timestamp: timestamp, isFile: isFile, fileUrl: text })
-          // Limit to last 20 messages
-          if (conversationHistory.length > 20) {
-            conversationHistory = conversationHistory.slice(-20)
+          // Limit to last 5 messages
+          if (conversationHistory.length > 5) {
+            conversationHistory = conversationHistory.slice(-5)
           }
           saveHistory()
         }
