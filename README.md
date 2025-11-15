@@ -1,2 +1,2 @@
 # chatbotUFPS
-Landing page and chatbot for UFPS
+Landing page and chatbot for UFPS Today
