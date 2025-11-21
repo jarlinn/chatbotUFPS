@@ -400,7 +400,8 @@
       })
       .then(response => response.json())
       .then(data => {
-        const responseText = data.model_response || 'Lo siento, no puedo responder a esa pregunta en este momento.'
+        const responseText = data.model_response || '🤔 Lo siento, no he podido entender del todo tu pregunta. ' +
+          '💡 ¿Podrías intentar reformularla o proporcionarme más detalles? ✅ Así podré ayudarte mejor.'
         const isFile = data.file === true
         addMessage(responseText, 'bot', Date.now(), isFile)
       })
